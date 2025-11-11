@@ -2,13 +2,15 @@
 
 Aqui compartilho meus projetos, ideias e tutoriais sobre programação!
 
-## 🧠 Projetos Recentes
+## 🧠 Meus Repositórios Públicos
 
 <ul>
-{% for repo in github.com/ricardoszanata?tab=repositories&q=&type=public&language=&sort= %}
-  <li>
-    <a href="{{ repo.html_url }}">{{ repo.name }}</a>  
-    {% if repo.description %} — {{ repo.description }}{% endif %}
-  </li>
+{% for repo in site.github.public_repositories %}
+  {% unless repo.name == "ricardoszanata.github.io" %}
+    <li>
+      <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
+      {% if repo.description %} — {{ repo.description }}{% endif %}
+    </li>
+  {% endunless %}
 {% endfor %}
 </ul>
